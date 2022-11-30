@@ -5,9 +5,6 @@ services:
     container_name: front
     working_dir: /root/front
     command: npm run dev
-    ports:
-      - "3000:3000"
-
 
   caddyerver:
     image: caddy:latest
@@ -15,7 +12,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-     
+      - "24678:24678"
     volumes:
       - type: bind
         source: ./caddy/

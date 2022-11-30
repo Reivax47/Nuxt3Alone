@@ -1,13 +1,12 @@
-
-monsite.fr {
-
+mysite.com {
+  
   @websockets {
     header Connection Upgrade
     header Upgrade websocket
   }
   
 	reverse_proxy @websockets front:24678
-	reverse_proxy front:3000
+	reverse_proxy front:3000 
 
 }
 

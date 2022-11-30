@@ -1,16 +1,14 @@
 #Front
-FROM node:16.18-bullseye
+FROM node:latest
 RUN apt -y update
 RUN apt -y upgrade
-RUN apt-get -y install  curl vim
+RUN apt-get -y install  vim
 
 
 # Montage des documents partagés
 COPY ./nuxt-app/ /root/front/
 WORKDIR /root/front
 RUN npm install
-EXPOSE 3000
-ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 CMD ["npm", "run", "dev"]
 
